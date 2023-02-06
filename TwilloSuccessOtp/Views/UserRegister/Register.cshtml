@@ -1,0 +1,43 @@
+﻿@model  TwilloSuccessOtp.Models.UserRegister
+@{
+    ViewBag.Title = "Register";
+}
+
+<style>
+    table tr td {
+        padding: 10px;
+    }
+</style>
+@using (Html.BeginForm("UserRegister", "UserRegister", FormMethod.Post))
+{
+    @Html.ValidationSummary();
+
+    <table>
+        <tr class="mt-0">
+            <td>@Html.LabelFor(model => model.FirstName)</td>
+            <td>@Html.TextBoxFor(model => model.FirstName, new { @class = "form-control " })</td>
+        </tr>
+        <tr style="margin-top:10px;">
+            <td>@Html.LabelFor(model => model.LastName)</td>
+            <td>@Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Email)</td>
+            <td>@Html.TextBoxFor(model => model.Email, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Password)</td>
+            <td>@Html.TextBoxFor(model => model.Password, new { @class = "form-control", Type = "password" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.Phone_Number)</td>
+            <td>@Html.TextBoxFor(model => model.Phone_Number, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Register" class="btn btn-success" />
+            </td>
+        </tr>
+    </table>
+
+}

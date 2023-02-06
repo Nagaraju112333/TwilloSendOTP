@@ -1,0 +1,45 @@
+﻿@model  IEnumerable<TwilloSuccessOtp.Models.UserRegister>
+@{
+    ViewBag.Title = "GetDetails";
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone_Number)
+        </th>
+    </tr>
+    @foreach(var c in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => c.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => c.LastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => c.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => c.Password)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => c.Phone_Number)
+                    </td>
+                </tr>
+            }
+</table>
+
